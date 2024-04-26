@@ -1,6 +1,6 @@
 {
   "name": "star-flicks-ds",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "scripts": {
     "dev": "npm run scripts && next dev",
@@ -17,6 +17,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.19",
     "@types/classnames": "^2.3.1",
+    "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
     "next": "14.2.3",
     "react": "^18",
@@ -38,7 +39,6 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "chromatic": "^11.3.0",
-    "class-variance-authority": "^0.7.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "eslint-plugin-storybook": "^0.8.0",
