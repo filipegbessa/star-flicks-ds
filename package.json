@@ -1,6 +1,6 @@
 {
   "name": "star-flicks-ds",
-  "version": "0.1.2",
+  "version": "0.1.7",
   "private": false,
   "scripts": {
     "dev": "npm run scripts && next dev",
@@ -52,9 +52,10 @@
   "author": "Filipe Bessa",
   "license": "ISC",
   "files": [
-    "styles/globals.css",
+    "styles/star-flicks.css",
     "tailwind.config.js",
     "components/*",
-    "fonts/*"
+    "fonts/*",
+    "types/*"
   ]
 }
