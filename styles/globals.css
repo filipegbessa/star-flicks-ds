@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "./tokens.css";
-@import "./titillium.css";
-@import "./fontIcons.css";
+@layer base {
+  @import "./tokens.css";
+  @import "./titillium.css";
+  @import "./fontIcons.css";
+}
 
 * {
   font-family: "Titillium", sans-serif;

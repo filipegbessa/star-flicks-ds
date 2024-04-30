@@ -1,7 +1,6 @@
-export * from "./Button/Button";
-export * from "./Icon/Icon";
-export * from "./Link/Link";
-export * from "./Ranking/Ranking";
-export * from "./SFInput/SFInput";
-export * from "./Switch/Switch";
-export * from "./Typography/Typography";
+export { SFButton } from "./SFButton/SFButton";
+export { SFIcon } from "./SFIcon/SFIcon";
+export { SFInput } from "./SFInput/SFInput";
+export { SFRanking } from "./SFRanking/SFRanking";
+export { SFSwitch } from "./SFSwitch/SFSwitch";
+export { SFTypography } from "./SFTypography/SFTypography";

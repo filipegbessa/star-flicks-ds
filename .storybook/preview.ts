@@ -1,7 +1,5 @@
 import type { Preview } from "@storybook/react";
-
 import "../styles/globals.css";
-import "@/build.css";
 
 const preview: Preview = {
   parameters: {
@@ -11,7 +9,6 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-    actions: { argTypesRegex: "^on[A-Z].*" },
     options: {
       storySort: {
         method: "alphabetical",

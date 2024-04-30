@@ -1,22 +1,19 @@
 {
-  "name": "star-flicks-ds",
-  "version": "0.1.7",
+  "name": "star-flicks-ds3",
+  "version": "0.1.24",
   "private": false,
   "scripts": {
-    "dev": "npm run scripts && next dev",
-    "build": "npm run scripts && next build",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "storybook": "npm run build:tailwind && storybook dev -p 6006",
+    "scripts": "node script/typeIcons.js",
+    "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build:tailwind": "npx tailwindcss -o build.css --minify",
-    "watch:tailwind": "npx tailwindcss -o ./build.css --watch",
-    "build-chromatic": "npx chromatic --project-token=",
-    "scripts": "node script/typeIcons.js"
+    "deploy": "npm run scripts && npm publish"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.19",
-    "@types/classnames": "^2.3.1",
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
     "next": "14.2.3",
@@ -30,15 +27,12 @@
     "@storybook/addon-links": "^8.0.9",
     "@storybook/addon-onboarding": "^8.0.9",
     "@storybook/blocks": "^8.0.9",
-    "@storybook/manager-api": "^8.0.9",
     "@storybook/nextjs": "^8.0.9",
     "@storybook/react": "^8.0.9",
     "@storybook/test": "^8.0.9",
-    "@storybook/theming": "^8.0.9",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "chromatic": "^11.3.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "eslint-plugin-storybook": "^0.8.0",
@@ -47,15 +41,16 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   },
-  "description": "Star Flicks Design System",
+  "description": "",
   "main": "components/index.ts",
-  "author": "Filipe Bessa",
+  "author": "",
   "license": "ISC",
   "files": [
-    "styles/star-flicks.css",
-    "tailwind.config.js",
-    "components/*",
+    "components/**/*.{ts,tsx}",
     "fonts/*",
-    "types/*"
+    "styles/*",
+    "types/*",
+    "utils/*",
+    "tailwind.config.ts"
   ]
 }
