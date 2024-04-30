@@ -35,13 +35,13 @@ const config = {
     //   8: "var(--spacing-2xl) /* 48px */",
     //   9: "var(--spacing-4xl) /* 56px */",
     // },
-    fontSize: {
-      xs: "var(--text-xs)",
-      sm: "var(--text-sm)",
-      md: "var(--text-md)",
-      lg: "var(--text-lg)",
-      xl: "var(--text-xl)",
-    },
+    // fontSize: {
+    //   xs: "var(--text-xs)",
+    //   sm: "var(--text-sm)",
+    //   md: "var(--text-md)",
+    //   lg: "var(--text-lg)",
+    //   xl: "var(--text-xl)",
+    // },
     // fontWeight: {
     //   light: "var(--font-light)",
     // },

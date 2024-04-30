@@ -3,7 +3,11 @@ import classNames from "classnames";
 import { SFSwitchProps } from "./SFSwitch";
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default ({ variant, enabled, disabled }: SFSwitchProps) => {
+export default ({
+  variant,
+  enabled,
+  disabled, 
+}: SFSwitchProps & { enabled: boolean }) => {
   const containerVariant = cva(
     classNames(
       "relative inline-flex h-6 w-11 items-center rounded-full disabled:bg-disabled bg-primary transition",

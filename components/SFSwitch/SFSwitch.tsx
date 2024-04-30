@@ -1,19 +1,13 @@
-import {
-  Switch as HeadlessSwitch,
-  type SwitchProps as HeadlessSwitchProps,
-} from "@headlessui/react";
+import { Switch, type SwitchProps } from "@headlessui/react";
 import { useState } from "react";
 import useStyle from "./SFSwitch.style";
 
 export type SFSwitchProps = {
-  defaultEnable?: boolean;
-  disabled?: boolean;
   variant?: "common" | "contract";
-  onChange?: (enabled: boolean) => void;
-} & HeadlessSwitchProps<any>;
+} & SwitchProps<typeof Switch>;
 
 export const SFSwitch = ({
-  defaultEnable: enabledByDefault = false,
+  defaultChecked: enabledByDefault = false,
   disabled,
   onChange,
   variant = "common",
@@ -28,7 +22,7 @@ export const SFSwitch = ({
   };
 
   return (
-    <HeadlessSwitch
+    <Switch
       checked={enabled}
       onChange={handleToogle}
       className={style.Container}
@@ -36,9 +30,7 @@ export const SFSwitch = ({
       {...props}
     >
       <span className="sr-only">switch toggle</span>
-      <span
-        className={style.Switch}
-      />
-    </HeadlessSwitch>
+      <span className={style.Switch} />
+    </Switch>
   );
 };

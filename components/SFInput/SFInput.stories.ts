@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { SFInput, SFInputProps } from "./SFInput";
 
 const meta: Meta<SFInputProps> = {
-  title: "Molecules/SFInput",
+  title: "Components/SF-Input",
   component: SFInput,
   argTypes: {},
   args: {

@@ -1,9 +1,11 @@
 import { IconsType } from "@/types";
+import classNames from "classnames";
 
-export interface SFIconProps {
+export type SFIconProps = {
   name: IconsType;
-}
+  className?: string;
+};
 
-export const SFIcon = ({ name }: SFIconProps) => {
-  return <span className={`icon-${name} text-yellow`} />;
+export const SFIcon = ({ name, className, ...props }: SFIconProps) => {
+  return <span className={classNames(`icon-${name}`, className)} />;
 };

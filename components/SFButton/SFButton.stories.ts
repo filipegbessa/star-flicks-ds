@@ -1,21 +1,54 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { SFButton } from './SFButton';
+import { Meta, StoryObj } from "@storybook/react";
 
-const meta = {
-  title: 'Components/SF-Button',
+import { SFButton, SFButtonProps } from "./SFButton";
+
+const meta: Meta<SFButtonProps> = {
+  title: "Components/SF-Button",
   component: SFButton,
-  parameters: {
-  },
-  tags: ['autodocs'],
   argTypes: {
+    children: {
+      type: "string",
+    },
+    disabled: {
+      type: "boolean",
+    },
+    className: {
+      type: "string",
+    },
   },
-  args: {},
-} satisfies Meta<typeof SFButton>;
+  args: {
+    children: "Botão",
+  },
+};
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Primary: StoryObj<SFButtonProps> = {
   args: {
+    variant: "primary",
+    size: "md",
+  },
+};
+
+export const Disabled: StoryObj<SFButtonProps> = {
+  args: {
+    variant: "primary",
+    disabled: true,
+    size: "md",
+  },
+};
+
+export const Secondary: StoryObj<SFButtonProps> = {
+  args: {
+    variant: "secondary",
+    size: "md",
+  },
+};
+
+export const Violet: StoryObj<SFButtonProps> = {
+  args: {
+    className: "theme-violet",
+    variant: "secondary",
+    size: "md",
   },
 };
