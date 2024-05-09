@@ -1,26 +1,32 @@
+import { InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
+
 export type SFInputProps = {
   label?: string;
   multiline?: boolean;
 } & (
-  | React.InputHTMLAttributes<HTMLInputElement>
-  | React.TextareaHTMLAttributes<HTMLTextAreaElement>
+  | InputHTMLAttributes<HTMLInputElement>
+  | TextareaHTMLAttributes<HTMLTextAreaElement>
 );
 
-const Content = (props: SFInputProps) => {
-  return props.multiline ? (
+const Content = ({ multiline, ...props }: SFInputProps) => {
+  return multiline ? (
     <textarea
-      {...(props as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
+      data-testid='SFInput'
+      {...(props as TextareaHTMLAttributes<HTMLTextAreaElement>)}
     />
   ) : (
-    <input {...(props as React.InputHTMLAttributes<HTMLInputElement>)} />
+    <input
+      data-testid='SFInput'
+      {...(props as InputHTMLAttributes<HTMLInputElement>)}
+    />
   );
 };
 
-export const SFInput = ({ label, className, ...rest }: SFInputProps) => {
+export const SFInput = ({ label, multiline, ...rest }: SFInputProps) => {
   return (
     <div>
       {label && <label>{label}</label>}
-      <Content {...rest} />
+      <Content multiline={multiline} {...rest} />
     </div>
   );
 };

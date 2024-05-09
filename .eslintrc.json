@@ -6,5 +6,19 @@
     "prettier",
     "plugin:storybook/recommended",
     "plugin:@next/next/recommended"
-  ]
+  ],
+  "rules": {
+    "react/prop-types": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/self-closing-comp": "warn",
+    "no-unused-vars": "off",
+    "import/no-unresolved": "off"
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "jest": true,
+    "node": true
+  }
 }
