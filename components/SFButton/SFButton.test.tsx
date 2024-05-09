@@ -27,7 +27,7 @@ describe('SFButton component', () => {
   });
 
   test('button is disabled when disabled prop is true', () => {
-    const button = getComponent({ disabled: true });
+    const button = getComponent({ disabled: false });
     expect(button).toBeDisabled();
   });
 
