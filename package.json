@@ -9,7 +9,7 @@
     "lint": "next lint",
     "scripts": "node script/typeIcons.js",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "build-storybook": "npm run test:cover && storybook build",
     "deploy": "npm run scripts && npm publish",
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore .",
