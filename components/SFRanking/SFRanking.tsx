@@ -1,4 +1,4 @@
-import { SFIcon } from "../SFIcon/SFIcon";
+import { SFIcon } from '../SFIcon/SFIcon';
 
 export interface SFRankingProps {
   className?: string;
@@ -8,18 +8,19 @@ export interface SFRankingProps {
 export const SFRanking = ({ value }: SFRankingProps) => {
   const stars = Array.from({ length: 5 }, (_, index) => (
     <li key={index}>
-      <SFIcon name="star" />
+      <SFIcon name='star' />
     </li>
   ));
 
   return (
-    <div className="flex">
-      <div className="relative z-0">
+    <div className='flex' data-testid='SFRanking'>
+      <div className='relative z-0'>
         <div
-          className="absolute top-0 right-0 bg-white h-full z-10"
+          data-testid='SFRanking-bar'
+          className='absolute top-0 right-0 bg-white h-full z-10'
           style={{ width: `${100 - value}%` }}
         />
-        <ul className="flex gap-1">{stars}</ul>
+        <ul className='flex gap-1'>{stars}</ul>
       </div>
     </div>
   );
