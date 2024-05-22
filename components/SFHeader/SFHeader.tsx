@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 
 export interface SFHeaderProps {
   logo: ReactNode;
@@ -7,20 +7,20 @@ export interface SFHeaderProps {
   minActive?: boolean;
 }
 
-export const SFHeader = ({
+export const SFHeader: FC<SFHeaderProps> = ({
   logo,
   children,
-  sticky,
-  minActive,
-}: SFHeaderProps) => {
+  sticky = false,
+  minActive = false,
+}) => {
   return (
     <header
       data-testid='SFHeader'
-      className={`top-0 left-0 right-0 w-full z-10 bg-white transition ${
-        minActive ? 'h-12' : 'h-14'
-      } px-5 ${sticky ? 'sticky' : ''}`}
+      className={`top-0 left-0 right-0 w-full z-10 bg-white transition-all ${
+        sticky ? 'sticky' : ''
+      } ${minActive ? 'h-12' : 'h-14'} px-5`}
     >
-      <div className='contentCenter flex justify-between items-center w-full py-2 h-full'>
+      <div className='flex justify-between items-center w-full h-full py-2'>
         {logo}
         {children}
       </div>

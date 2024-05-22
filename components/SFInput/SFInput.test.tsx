@@ -2,14 +2,14 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { SFInput, SFInputProps } from './SFInput';
 
-const getComponent = (props?: SFInputProps) => {
-  const { getByTestId } = render(<SFInput {...props} />);
-  return getByTestId('SFInput');
-};
-
 describe('SFInput component', () => {
+  const renderComponent = (props?: SFInputProps) => {
+    const { getByTestId } = render(<SFInput {...props} />);
+    return getByTestId('SFInput');
+  };
+
   test('renders input without label', () => {
-    const input = getComponent();
+    const input = renderComponent();
     expect(input).toBeInTheDocument();
   });
 
@@ -21,7 +21,7 @@ describe('SFInput component', () => {
   });
 
   test('renders textarea without label', () => {
-    const textarea = getComponent({ multiline: true });
+    const textarea = renderComponent({ multiline: true });
     expect(textarea.tagName).toBe('TEXTAREA');
   });
 
@@ -35,12 +35,12 @@ describe('SFInput component', () => {
   });
 
   test('passes other props to input', () => {
-    const input = getComponent({ placeholder: 'Enter text' });
+    const input = renderComponent({ placeholder: 'Enter text' });
     expect(input).toHaveAttribute('placeholder', 'Enter text');
   });
 
   test('passes other props to textarea', () => {
-    const textarea = getComponent({
+    const textarea = renderComponent({
       multiline: true,
       placeholder: 'Enter text',
     });
@@ -50,7 +50,7 @@ describe('SFInput component', () => {
 
   test('fires onChange callback', () => {
     const handleChange = jest.fn();
-    const input = getComponent({
+    const input = renderComponent({
       onChange: handleChange,
     });
     fireEvent.change(input, { target: { value: 'Test' } });
@@ -59,7 +59,7 @@ describe('SFInput component', () => {
 
   test('fires onFocus callback', () => {
     const handleFocus = jest.fn();
-    const input = getComponent({
+    const input = renderComponent({
       onFocus: handleFocus,
     });
     fireEvent.focus(input);
@@ -68,7 +68,7 @@ describe('SFInput component', () => {
 
   test('fires onBlur callback', () => {
     const handleBlur = jest.fn();
-    const input = getComponent({
+    const input = renderComponent({
       onBlur: handleBlur,
     });
     fireEvent.blur(input);

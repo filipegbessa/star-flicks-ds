@@ -27,6 +27,9 @@
   --text-primary: 2, 6, 23;
   --text-disabled: 138, 138, 138;
 
+  --success: 166, 217, 106;
+  --error: 215, 25, 28;
+
   /* Shadows */
   --shadow-sm: 0px 0px 10px rgba(132, 132, 132, 15%);
   --shadow-md: 0px 0px 20px rgba(132, 132, 132, 20%);

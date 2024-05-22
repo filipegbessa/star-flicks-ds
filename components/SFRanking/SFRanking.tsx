@@ -1,33 +1,44 @@
+import { FC } from 'react';
 import { SFIcon } from '../SFIcon/SFIcon';
 import { SFTypography } from '../SFTypography/SFTypography';
 
 export interface SFRankingProps {
-  className?: string;
   value: number;
   label?: string;
 }
 
-export const SFRanking = ({ value, label }: SFRankingProps) => {
-  const stars = Array.from({ length: 5 }, (_, index) => (
+const MAX_STARS = 5;
+
+export const SFRanking: FC<SFRankingProps> = ({ value, label }) => {
+  const stars = Array.from({ length: MAX_STARS }, (_, index) => (
     <li key={index}>
       <SFIcon name='star' className='text-primary' />
     </li>
   ));
 
+  const filledStarsPercentage = (value / 10) * 100;
+
   return (
-    <div data-testid='SFRanking'>
+    <div data-testid='SFRanking' className='flex flex-col gap-2'>
       {label && <SFTypography>{label}</SFTypography>}
-      <div className='flex gap-1'>
+      <div className='flex items-center gap-2'>
         <SFTypography size='md' weight='medium'>
           {value.toFixed(1)}
         </SFTypography>
-        <div className='flex' data-testid='SFRanking' title={String(value)}>
+
+        <div
+          className='relative flex items-center'
+          aria-label={`Rating: ${value} out of 10`}
+        >
           <div
             className='relative z-0 overflow-hidden'
-            style={{ width: `${(value / 10) * 100}%` }}
+            style={{ width: `${filledStarsPercentage}%` }}
           >
             <ul className='flex gap-1'>{stars}</ul>
           </div>
+          <ul className='absolute top-0 left-0 w-full flex gap-1 opacity-40'>
+            {stars}
+          </ul>
         </div>
       </div>
     </div>

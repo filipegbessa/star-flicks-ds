@@ -1,35 +1,40 @@
-import { Switch, type SwitchProps } from "@headlessui/react";
-import { useState } from "react";
-import useStyle from "./SFSwitch.style";
+import React, { useState } from 'react';
+import { Switch } from '@headlessui/react';
+import useStyle from './SFSwitch.style';
 
-export type SFSwitchProps = {
-  variant?: "common" | "contract";
-} & SwitchProps<typeof Switch>;
+export interface SFSwitchProps {
+  variant?: 'common' | 'contract';
+  defaultChecked?: boolean;
+  disabled?: boolean;
+  onChange?: (checked: boolean) => void;
+}
 
-export const SFSwitch = ({
-  defaultChecked: enabledByDefault = false,
-  disabled,
+export const SFSwitch: React.FC<SFSwitchProps> = ({
+  defaultChecked = false,
+  disabled = false,
   onChange,
-  variant = "common",
+  variant = 'common',
   ...props
-}: SFSwitchProps) => {
-  const [enabled, setEnabled] = useState(enabledByDefault);
+}) => {
+  const [enabled, setEnabled] = useState(defaultChecked);
   const style = useStyle({ variant, enabled, disabled });
 
-  const handleToogle = () => {
-    setEnabled(!enabled);
-    onChange?.(!enabled);
+  const handleToggle = () => {
+    const newValue = !enabled;
+    setEnabled(newValue);
+    onChange?.(newValue);
   };
 
   return (
     <Switch
+      data-testid='SFSwitch'
       checked={enabled}
-      onChange={handleToogle}
+      onChange={handleToggle}
       className={style.Container}
       disabled={disabled}
       {...props}
     >
-      <span className="sr-only">switch toggle</span>
+      <span className='sr-only'>Toggle switch</span>
       <span className={style.Switch} />
     </Switch>
   );

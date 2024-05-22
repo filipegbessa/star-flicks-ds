@@ -6,6 +6,7 @@ import {
   SFMoviesList,
   SFRanking,
   SFSelect,
+  SFSwitch,
   SFTagsList,
   SFTypography,
 } from '@/components';
@@ -16,11 +17,13 @@ const inter = Inter({ subsets: ['latin'] });
 export default function Home() {
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between  bg-[red] md:bg-[blue] ${inter.className}`}
+      className={`flex min-h-screen flex-col items-center justify-between  bg-[white] md:bg-[blue] ${inter.className}`}
     >
       <SFHeader logo='logo' />
+      <SFSwitch variant='common' />
+      <SFSwitch variant='contract' />
       <SFSelect label='Ranking' options={['1', '2', '3', '4', '5']} />
-      <SFRanking label='Ranking' value={5} />
+      <SFRanking label='Ranking' value={4.78} />
       <SFTagsList list={[{ id: 1, title: 'Tag' }]} />
       <SFInput label='Label' />
       <SFInput label='Label' disabled />

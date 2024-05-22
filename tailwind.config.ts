@@ -63,6 +63,8 @@ const config = {
         divider: toRgba('--divider'),
         yellow: '#FFD34E',
         disabled: toRgba('--text-disabled'),
+        success: toRgba('--success'),
+        error: toRgba('--error'),
       },
       backgroundColor: {
         light: toRgba('--bg-light'),
