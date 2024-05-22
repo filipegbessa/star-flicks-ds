@@ -1,6 +1,6 @@
 {
   "name": "star-flicks-ds3",
-  "version": "0.1.10",
+  "version": "0.1.18-tst",
   "private": false,
   "scripts": {
     "dev": "next dev",
@@ -10,13 +10,13 @@
     "scripts": "node script/typeIcons.js",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "npm run test:cover && storybook build",
+    "build-Vercel": "npm run test:cover && storybook build && npm run scripts && npm publish",
     "deploy": "npm run scripts && npm publish",
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore .",
     "test": "jest --watch",
     "test:ci": "jest --ci",
-    "test:cover": "jest --coverage",
-    "publish": "npm version path && npm publish"
+    "test:cover": "jest --coverage"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.19",

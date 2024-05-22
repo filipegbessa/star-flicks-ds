@@ -1,4 +1,4 @@
-import { IconsType } from '@/types';
+import { IconsType } from '../../types';
 import classNames from 'classnames';
 
 export type SFIconProps = {

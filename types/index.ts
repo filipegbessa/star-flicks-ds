@@ -1,1 +1,3 @@
-export type { IconsType } from "./icons";
+export type * from './icons';
+export type * from './movie';
+export type * from './typography';

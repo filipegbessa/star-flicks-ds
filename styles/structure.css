@@ -1,0 +1,19 @@
+html,
+body {
+  @apply h-full;
+}
+
+.contentCenter {
+  @apply max-w-screen-md mx-auto;
+}
+
+.sideSpace {
+  @apply lg:px-0 px-5;
+}
+
+.SFCard {
+  @apply bg-white border border-gray-200 rounded-lg shadow-md p-5;
+  &.noPadding {
+    @apply p-0;
+  }
+}

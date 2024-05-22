@@ -1,8 +1,17 @@
 :root {
   /* Colors */
-  --primary: 45, 91, 255;
-  --secondary: 98, 132, 253;
-  --tertiary: 150, 173, 255;
+  --primary: 232, 157, 16;
+  --primary-hover: #d1880e;
+  --primary-active: #b9750c;
+  --primary-contrast: 2, 6, 23;
+  --secondary: 224, 190, 126;
+  --secondary-hover: #c9a568;
+  --secondary-active: #b08d54;
+  --secondary-contrast: 2, 6, 23;
+  --tertiary: 219, 75, 35;
+  --tertiary-hover: #c4411d;
+  --tertiary-active: #a93718;
+  --tertiary-contrast: 255, 255, 255;
   --quaternary: 236, 240, 255;
 
   --hover: 27, 74, 240;
@@ -15,16 +24,8 @@
   --bg-dark: 248, 248, 248;
   --bg-disabled: 239, 239, 239;
 
-  --text-primary: 24, 24, 24;
-  --text-secondary: 92, 92, 92;
-  --text-tertiary: 116, 116, 116;
+  --text-primary: 2, 6, 23;
   --text-disabled: 138, 138, 138;
-
-  /* Screens */
-  --screen-mobile: 640px;
-  --screen-tablet: 1024px;
-  --screen-desktop: 1440px;
-  --screen-tv: 1920px;
 
   /* Shadows */
   --shadow-sm: 0px 0px 10px rgba(132, 132, 132, 15%);
@@ -54,6 +55,14 @@
   --border-radius-sm: 4px;
   --border-radius-md: 8px;
   --border-radius-lg: 16px;
+
+  /* Font Weight */
+  --font-thin: 200;
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 600;
+  --font-bold: 700;
+  --font-black: 800;
 
   /* Font Size */
   --text-xs: 12px;

@@ -4,6 +4,6 @@ export default create({
   base: 'dark',
   brandTitle: 'Star Flicks Design System',
   brandUrl: '/',
-  brandImage: './star-flicks-logo.png',
+  brandImage: './img/star-flicks-logo.png',
   brandTarget: '_self',
 });

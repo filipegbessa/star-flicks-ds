@@ -3,12 +3,13 @@
 @tailwind utilities;
 
 @layer base {
-  @import "./tokens.css";
-  @import "./titillium.css";
-  @import "./fontIcons.css";
+  @import './tokens.css';
+  @import './titillium.css';
+  @import './fontIcons.css';
+  @import './structure.css';
 }
 
 * {
-  font-family: "Titillium", sans-serif;
+  font-family: 'Titillium', sans-serif;
   font-weight: 400;
 }

@@ -1,25 +1,38 @@
-import React from "react";
-import { cva, type VariantProps } from "class-variance-authority";
+import React from 'react';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { TypographyWeight } from '../../types';
 
-const textVariants = cva("text-black-primary text-sm font-normal", {
+const textVariants = cva([], {
   variants: {
     variant: {
-      primary: "text-black-primary",
-      secondary: "text-black-secondary",
-      tertiary: "text-black-tertiary",
+      primary: 'text-black',
+      secondary: 'text-black-secondary',
+      tertiary: 'text-black-tertiary',
     },
     size: {
-      xs: "text-xs",
-      sm: "text-sm",
-      md: "text-md",
-      xl: "text-xl",
-      title1: "text-txl",
-      title2: "text-tlg",
-      title3: "text-tmd",
+      xs: 'text-xs',
+      sm: 'text-sm',
+      md: 'text-base',
+      lg: 'text-lg',
+      xl: 'text-xl',
+      '2xl': 'text-2xl',
+    },
+    weight: {
+      thin: 'font-thin',
+      light: 'font-light',
+      normal: 'font-normal',
+      medium: 'font-medium',
+      bold: 'font-bold',
+      black: 'font-black',
+    },
+    lines: {
+      1: 'line-clamp-1',
+      2: 'line-clamp-2',
+      3: 'line-clamp-3',
     },
     defaultVariants: {
-      variant: "primary",
-      size: "md",
+      variant: 'primary',
+      size: 'md',
     },
   },
 });
@@ -27,18 +40,32 @@ const textVariants = cva("text-black-primary text-sm font-normal", {
 export type SFTypographyProps = VariantProps<typeof textVariants> & {
   children: React.ReactNode;
   element?: keyof JSX.IntrinsicElements;
-} & JSX.IntrinsicElements["p"];
+  lines?: 1 | 2 | 3;
+  weight?: TypographyWeight;
+} & JSX.IntrinsicElements['p'];
 
 export const SFTypography = ({
   children,
-  element = "p",
-  className,
+  element = 'p',
+  className = '',
+  variant = 'primary',
+  size = 'md',
+  lines,
+  weight = 'normal',
   ...rest
 }: SFTypographyProps) => {
   const Element = element as JSX.ElementType;
 
   return (
-    <Element className={`${textVariants(rest)} ${className}`} {...rest}>
+    <Element
+      className={`${textVariants({
+        variant,
+        size,
+        lines,
+        weight,
+      })} ${className}`}
+      {...rest}
+    >
       {children}
     </Element>
   );
