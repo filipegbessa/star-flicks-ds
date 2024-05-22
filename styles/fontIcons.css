@@ -26,6 +26,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-noImg:before {
+  content: '\e902';
+}
 .icon-user:before {
   content: '\e901';
 }

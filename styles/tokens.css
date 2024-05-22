@@ -1,5 +1,7 @@
 :root {
   /* Colors */
+  --bg-body: 227, 227, 277;
+
   --primary: 232, 157, 16;
   --primary-hover: #d1880e;
   --primary-active: #b9750c;

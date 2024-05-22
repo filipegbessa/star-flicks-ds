@@ -19,7 +19,7 @@ export const SFRanking: FC<SFRankingProps> = ({ value, label }) => {
   const filledStarsPercentage = (value / 10) * 100;
 
   return (
-    <div data-testid='SFRanking' className='flex flex-col gap-2'>
+    <div data-testid='SFRanking' className='flex flex-col'>
       {label && <SFTypography>{label}</SFTypography>}
       <div className='flex items-center gap-2'>
         <SFTypography size='md' weight='medium'>

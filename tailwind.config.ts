@@ -76,6 +76,7 @@ const config = {
         'secondary-active': 'var(--secondary-active)',
         'tertiary-hover': 'var(--tertiary-hover)',
         'tertiary-active': 'var(--tertiary-active)',
+        body: toRgba('--bg-body'),
       },
       textColor: {
         contrast: {
