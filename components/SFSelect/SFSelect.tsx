@@ -1,19 +1,22 @@
-import { SelectHTMLAttributes } from 'react';
+import { ChangeEvent, SelectHTMLAttributes } from 'react';
 import { SFTypography } from '../SFTypography/SFTypography';
 
 export type SFSelectProps = {
   options: string[];
-  defaultValue?: string;
+  defaultText?: string;
   error?: boolean;
   label?: string;
+  onChange?: (value: string) => void;
 } & SelectHTMLAttributes<HTMLInputElement>;
 
 export const SFSelect = ({
   label,
   options,
-  defaultValue,
+  defaultText,
   error,
   name,
+  onChange,
+  value = '',
 }: SFSelectProps) => {
   const styleInput = `appearance-none disabled:bg-disabled w-full border-2 border-gray rounded-md px-3 h-9 bg-white focus:border-primary focus:outline-none ${
     error ? '!border-red-500' : ''
@@ -28,9 +31,11 @@ export const SFSelect = ({
       )}
       <select
         name={name}
-        value={defaultValue ?? options[0]}
         className={styleInput}
+        onChange={(e) => onChange?.(e.target.value)}
+        value={value}
       >
+        <option value='DEFAULT'>{defaultText || 'Selecione...'}</option>
         {options.map((item, index) => (
           <option key={index} value={item}>
             {item}

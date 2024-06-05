@@ -11,7 +11,7 @@ const MAX_STARS = 5;
 
 export const SFRanking: FC<SFRankingProps> = ({ value, label }) => {
   const stars = Array.from({ length: MAX_STARS }, (_, index) => (
-    <li key={index}>
+    <li key={index} className='flex items-center'>
       <SFIcon name='star' className='text-primary' />
     </li>
   ));
@@ -27,8 +27,9 @@ export const SFRanking: FC<SFRankingProps> = ({ value, label }) => {
         </SFTypography>
 
         <div
-          className='relative flex items-center'
+          className='relative flex items-center p-1 rounded-sm bg-white'
           aria-label={`Rating: ${value} out of 10`}
+          title={`Rating: ${value} out of 10`}
         >
           <div
             className='relative z-0 overflow-hidden'
@@ -36,7 +37,7 @@ export const SFRanking: FC<SFRankingProps> = ({ value, label }) => {
           >
             <ul className='flex gap-1'>{stars}</ul>
           </div>
-          <ul className='absolute top-0 left-0 w-full flex gap-1 opacity-40'>
+          <ul className='absolute top-1 left-1 w-full flex gap-1 opacity-40'>
             {stars}
           </ul>
         </div>

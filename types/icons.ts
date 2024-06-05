@@ -1,4 +1,7 @@
 export type IconsType =
-  | "noImg"
   | "user"
+  | "trash"
+  | "cart"
+  | "arrowDoubleRight"
+  | "noImg"
   | "star";

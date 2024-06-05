@@ -1,3 +1,4 @@
+export { SFAutocomplete } from './SFAutocomplete/SFAutocomplete';
 export { SFButton } from './SFButton/SFButton';
 export { SFHeader } from './SFHeader/SFHeader';
 export { SFIcon } from './SFIcon/SFIcon';

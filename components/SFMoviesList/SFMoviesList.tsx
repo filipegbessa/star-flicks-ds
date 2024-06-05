@@ -5,7 +5,8 @@ export type SFMoviesListProps = {
   list: IMovie[];
   onClick?: (movie: IMovie) => void;
   disabled?: boolean;
-  href: string;
+  href?: string;
+  customContent: {};
 };
 
 export const SFMoviesList = ({ list, ...props }: SFMoviesListProps) => {

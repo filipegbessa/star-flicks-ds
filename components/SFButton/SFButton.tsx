@@ -1,14 +1,15 @@
 import { ButtonHTMLAttributes } from 'react';
-import { IconsType } from '../../types';
+import { IVariant, IconsType } from '../../types';
 import useStyle from './SFButton.style';
 import { SFIcon } from '../SFIcon/SFIcon';
 
 export type SFButtonProps = {
   title?: string;
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'blank';
+  variant?: IVariant;
   icon?: IconsType;
   full?: boolean;
+  circle?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const SFButton = ({
@@ -20,6 +21,7 @@ export const SFButton = ({
   icon,
   children,
   full,
+  circle,
   ...props
 }: SFButtonProps) => {
   const { Button: buttonStyle, Icon: iconStyle } = useStyle({
@@ -27,6 +29,7 @@ export const SFButton = ({
     size,
     squared: Boolean(!title && icon),
     full,
+    circle,
   });
 
   return (

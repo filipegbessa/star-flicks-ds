@@ -20,7 +20,7 @@ export const SFHeader: FC<SFHeaderProps> = ({
         sticky ? 'sticky' : ''
       } ${minActive ? 'h-12' : 'h-14'} px-5`}
     >
-      <div className='flex justify-between items-center w-full h-full py-2'>
+      <div className='flex justify-between items-center w-full h-full py-2 sideSpace contentCenter'>
         {logo}
         {children}
       </div>

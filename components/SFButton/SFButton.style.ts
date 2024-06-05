@@ -8,12 +8,14 @@ export default ({
   size,
   squared,
   full,
+  circle,
 }: SFButtonProps & { squared: boolean }) => {
+  const addWidth = squared || circle;
   const buttonVariants = cva(
     classNames(
-      'rounded-sm disabled:text-disabled disabled:bg-disabled flex justify-center items-center font-medium',
-      { 'px-3': !squared },
-      { 'w-full': full }
+      'disabled:text-disabled disabled:bg-disabled flex justify-center items-center font-medium',
+      { 'px-3': !squared && !circle, 'w-full': full },
+      ...(circle ? ['rounded-full'] : ['rounded-sm'])
     ),
     {
       variants: {
@@ -24,14 +26,15 @@ export default ({
             'bg-secondary text-contrast-secondary hover:bg-secondary-hover active:bg-secondary-active',
           tertiary:
             'bg-tertiary text-contrast-tertiary hover:bg-tertiary-hover active:bg-tertiary-active',
-          blank: 'bg-transparent text-black',
+          blank: 'bg-transparent text-white',
+          error: 'bg-error text-white',
         },
         size: {
-          xs: classNames('h-4 text-xs', { 'w-4': squared }),
-          sm: classNames('h-6 text-sm', { 'w-6': squared }),
-          md: classNames('h-9 text-md', { 'w-9': squared }),
-          lg: classNames('h-14 text-xl', { 'w-14': squared }),
-          xl: classNames('h-14 text-xl', { 'w-14': squared }),
+          xs: classNames('h-4 text-xs', { 'w-4': addWidth }),
+          sm: classNames('h-6 text-sm', { 'w-6': addWidth }),
+          md: classNames('h-9 text-md', { 'w-9': addWidth }),
+          lg: classNames('h-14 text-xl', { 'w-14': addWidth }),
+          xl: classNames('h-14 text-xl', { 'w-14': addWidth }),
         },
         defaultVariants: {
           variant: 'primary',
@@ -46,7 +49,9 @@ export default ({
         primary: 'text-contrast-primary',
         secondary: 'text-contrast-secondary',
         tertiary: 'text-contrast-tertiary',
-        blank: 'text-primary',
+        blank:
+          'text-primary hover:text-primary-hover active:text-primary-active',
+        error: 'text-white',
       },
       size: {
         xs: 'text-xs',
