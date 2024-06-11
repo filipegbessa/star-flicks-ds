@@ -24,7 +24,7 @@ export default function Home() {
       <SFSwitch variant='contract' />
       <SFSelect label='Ranking' options={['1', '2', '3', '4', '5']} />
       <SFRanking label='Ranking' value={4.78} />
-      <SFTagsList list={[{ id: 1, title: 'Tag' }]} />
+      <SFTagsList list={[{ id: 1, name: 'Tag' }]} />
       <SFInput label='Label' />
       <SFInput label='Label' disabled />
       <SFInput multiline rows={5} label='Label' disabled />

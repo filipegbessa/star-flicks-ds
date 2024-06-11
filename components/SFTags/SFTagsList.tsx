@@ -3,21 +3,21 @@ import { SFTypography } from '../SFTypography/SFTypography';
 
 type IList = {
   id: number;
-  title: string;
+  name: string;
 };
 type SFTagsListProps = {
   list: IList[];
 };
 
 export const SFTagsList = ({ list }: SFTagsListProps) => {
-  return list.map(({ id, title }) => (
+  return list.map(({ id, name }) => (
     <Link
       href={`/category/${id}`}
       key={id}
       className='flex justify-center items-center bg-primary px-2 h-5 rounded-sm hover:bg-primary-hover active:bg-primary-active'
     >
       <SFTypography weight='medium' size='sm'>
-        {title}
+        {name}
       </SFTypography>
     </Link>
   ));
