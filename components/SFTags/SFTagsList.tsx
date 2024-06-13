@@ -2,11 +2,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode } from 'swiper/modules';
 import { SFTagsListItem } from './SFTagsListItem';
 
-type IList = {
-  id: number;
-  name: string;
-};
-
 export type ISize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 export type SFTagsListProps = {

@@ -1,6 +1,6 @@
 {
   "name": "star-flicks-ds3",
-  "version": "0.1.24-tst",
+  "version": "0.1.25-tst",
   "private": false,
   "scripts": {
     "dev": "next dev",
@@ -10,7 +10,7 @@
     "scripts": "node script/typeIcons.js",
     "storybook": "storybook dev -p 6006",
     "build-vercel": "npm run test:ci && storybook build && npm run test:cover",
-    "deploy": "npm run scripts && npm publish",
+    "deploy": "npm run test:ci && npm run scripts && npm publish",
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore .",
     "test": "jest --watch",

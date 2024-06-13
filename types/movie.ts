@@ -1,6 +1,7 @@
 import { MovieTypeEnum } from '@/enum';
 
 export type ITypeMovie = MovieTypeEnum;
+
 export type IMovieType =
   | 'name'
   | 'type'

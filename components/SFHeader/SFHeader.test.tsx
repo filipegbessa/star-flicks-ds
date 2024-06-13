@@ -42,9 +42,10 @@ describe('SFHeader Component', () => {
       logo: <div>Logo</div>,
       minActive: true,
     });
+    const content = getByTestId.firstChild;
 
-    expect(getByTestId).toHaveClass('h-12');
-    expect(getByTestId).not.toHaveClass('h-14');
+    expect(content).toHaveClass('h-12');
+    expect(content).not.toHaveClass('h-14');
   });
 
   test('applies default height class when minActive is false', () => {
@@ -52,8 +53,9 @@ describe('SFHeader Component', () => {
       logo: <div>Logo</div>,
       minActive: false,
     });
+    const content = getByTestId.firstChild;
 
-    expect(getByTestId).toHaveClass('h-14');
-    expect(getByTestId).not.toHaveClass('h-12');
+    expect(content).toHaveClass('h-14');
+    expect(content).not.toHaveClass('h-12');
   });
 });
