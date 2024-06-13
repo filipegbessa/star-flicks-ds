@@ -71,12 +71,12 @@ const config = {
         disabled: toRgba('--text-disabled'),
         success: toRgba('--success'),
         error: toRgba('--error'),
+        body: 'var(--bg-body)',
       },
       backgroundColor: {
         light: toRgba('--bg-light'),
         dark: toRgba('--bg-dark'),
         disabled: toRgba('--bg-disabled'),
-        body: toRgba('--bg-body'),
       },
       textColor: {
         contrast: {

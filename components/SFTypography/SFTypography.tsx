@@ -6,8 +6,11 @@ const textVariants = cva([], {
   variants: {
     variant: {
       primary: 'text-black',
+      'primary-contrast': 'text-contrast-primary',
       secondary: 'text-black-secondary',
+      'secondary-contrast': 'text-contrast-secondary',
       tertiary: 'text-black-tertiary',
+      'tertiary-contrast': 'text-contrast-tertiary',
     },
     size: {
       xs: 'text-xs',

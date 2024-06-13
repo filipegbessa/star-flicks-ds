@@ -6,6 +6,7 @@ import { IMovie } from '@/types';
 export type SFAutocompleteProps = {
   listSearch: any[];
   select: (item: any) => any;
+  loading?: boolean;
 } & SFInputProps;
 
 export const SFAutocomplete = ({
@@ -14,6 +15,7 @@ export const SFAutocomplete = ({
   name,
   listSearch,
   select,
+  loading,
   ...rest
 }: SFAutocompleteProps) => {
   const [showAutoComplete, setShowAutoComplete] = useState(false);
@@ -30,41 +32,47 @@ export const SFAutocomplete = ({
       )}
       <div className='absolute top-9 left-0 z-10 rounded-md bg-white w-full overflow-hidden'>
         <div className='relative z-20'>
-          {Boolean(listSearch.length) &&
-            showAutoComplete &&
-            listSearch.map((item, index) => {
-              if (index > 4) return;
+          {loading ? (
+            <>loading...</>
+          ) : (
+            <>
+              {Boolean(listSearch.length) &&
+                showAutoComplete &&
+                listSearch.map((item, index) => {
+                  if (index > 4) return;
 
-              if (typeof item === 'string') {
-                return (
-                  <SFButton
-                    variant='blank'
-                    key={index}
-                    className='hover:bg-secondary w-full !justify-start'
-                    onClick={() => {
-                      select(item);
-                      setShowAutoComplete(false);
-                    }}
-                  >
-                    {item}
-                  </SFButton>
-                );
-              }
+                  if (typeof item === 'string') {
+                    return (
+                      <SFButton
+                        variant='blank'
+                        key={index}
+                        className='hover:bg-secondary w-full !justify-start'
+                        onClick={() => {
+                          select(item);
+                          setShowAutoComplete(false);
+                        }}
+                      >
+                        {item}
+                      </SFButton>
+                    );
+                  }
 
-              return (
-                <SFButton
-                  variant='blank'
-                  key={index}
-                  className='hover:bg-secondary w-full !justify-start'
-                  onClick={() => {
-                    select(item);
-                    setShowAutoComplete(false);
-                  }}
-                >
-                  {item.name}
-                </SFButton>
-              );
-            })}
+                  return (
+                    <SFButton
+                      variant='blank'
+                      key={index}
+                      className='hover:bg-secondary w-full !justify-start'
+                      onClick={() => {
+                        select(item);
+                        setShowAutoComplete(false);
+                      }}
+                    >
+                      {item.name}
+                    </SFButton>
+                  );
+                })}
+            </>
+          )}
         </div>
       </div>
     </div>

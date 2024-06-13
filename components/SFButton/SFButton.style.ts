@@ -26,7 +26,7 @@ export default ({
             'bg-secondary text-contrast-secondary hover:bg-secondary-hover active:bg-secondary-active',
           tertiary:
             'bg-tertiary text-contrast-tertiary hover:bg-tertiary-hover active:bg-tertiary-active',
-          blank: 'bg-transparent text-white',
+          blank: 'bg-transparent text-black',
           error: 'bg-error text-white',
         },
         size: {
