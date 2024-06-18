@@ -10,7 +10,7 @@
     "scripts": "node script/typeIcons.js",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "npm run test:ci && storybook build",
-    "build-vercel": "npm run test:ci && storybook build && npm run test:cover && npm publish",
+    "build-vercel": "npm run test:ci && storybook build && npm run test:cover",
     "deploy": "npm run test:ci && npm run scripts && npm publish",
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore .",
