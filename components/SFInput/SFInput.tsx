@@ -6,6 +6,7 @@ export type SFInputProps = {
   multiline?: boolean;
   error?: boolean;
   name?: string;
+  customInput?: JSX.Element;
 } & (
   | InputHTMLAttributes<HTMLInputElement>
   | TextareaHTMLAttributes<HTMLTextAreaElement>
@@ -38,6 +39,7 @@ export const SFInput = ({
   multiline,
   error,
   name,
+  customInput,
   ...rest
 }: SFInputProps) => {
   return (
@@ -47,7 +49,9 @@ export const SFInput = ({
           <SFTypography>{label}</SFTypography>
         </label>
       )}
-      <Content multiline={multiline} name={name} error={error} {...rest} />
+      {customInput || (
+        <Content multiline={multiline} name={name} error={error} {...rest} />
+      )}
     </div>
   );
 };

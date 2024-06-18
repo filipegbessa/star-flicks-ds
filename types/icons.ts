@@ -4,4 +4,5 @@ export type IconsType =
   | "cart"
   | "arrowDoubleRight"
   | "noImg"
-  | "star";
+  | "star"
+  | "camera";
