@@ -17,7 +17,7 @@ jobs:
           node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies and build 🔧
-        run: npm i && npm run test:ci && npm run scripts
+        run: npm cache clean --force && npm i && npm run test:ci && npm run scripts
       - name: Publish package on NPM 📦
         run: npm publish
         env:
