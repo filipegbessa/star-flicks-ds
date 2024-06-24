@@ -15,6 +15,7 @@
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore .",
     "test": "jest --watch",
+    "test:action": "jest",
     "test:ci": "jest --ci",
     "test:cover": "jest --coverage"
   },
