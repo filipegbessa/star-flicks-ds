@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies 🔧
         run: npm i
       - name: test ci 🔧
-        run: npm test:action
+        run: npm run test:action
       - name: scripts 🔧
         run: npm run scripts
       - name: Publish package on NPM 📦
