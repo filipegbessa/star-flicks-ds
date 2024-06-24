@@ -34,7 +34,7 @@ jobs:
           node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies 🔧
-        run: npm i
+        run: npm ci
       - name: scripts 🔧
         run: npm run scripts
       - name: Publish package on NPM 📦
