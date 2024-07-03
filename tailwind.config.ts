@@ -67,11 +67,33 @@ const config = {
         icon: toRgba('--icon'),
         outline: toRgba('--outline'),
         divider: toRgba('--divider'),
-        yellow: '#FFD34E',
+        yellow: toRgba('#FFD34E'),
         disabled: toRgba('--text-disabled'),
         success: toRgba('--success'),
         error: toRgba('--error'),
         body: toRgba('--bg-body'),
+        alert: {
+          error: {
+            primary: toRgba('--alert-error-primary'),
+            secondary: toRgba('--alert-error-secondary'),
+            text: toRgba('--alert-error-text'),
+          },
+          info: {
+            primary: toRgba('--alert-info-primary'),
+            secondary: toRgba('--alert-info-secondary'),
+            text: toRgba('--alert-info-text'),
+          },
+          success: {
+            primary: toRgba('--alert-success-primary'),
+            secondary: toRgba('--alert-success-secondary'),
+            text: toRgba('--alert-success-text'),
+          },
+          warning: {
+            primary: toRgba('--alert-warning-primary'),
+            secondary: toRgba('--alert-warning-secondary'),
+            text: toRgba('--alert-warning-text'),
+          },
+        },
       },
       backgroundColor: {
         light: toRgba('--bg-light'),
@@ -86,6 +108,9 @@ const config = {
         },
         black: {
           DEFAULT: toRgba('--text-primary'),
+        },
+        gray: {
+          DEFAULT: toRgba('--gray'),
         },
       },
       boxShadow: {

@@ -26,6 +26,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-close:before {
+  content: '\e90b';
+}
+.icon-alertInfo:before {
+  content: '\e907';
+}
+.icon-alertWarning:before {
+  content: '\e908';
+}
+.icon-alertSuccess:before {
+  content: '\e909';
+}
+.icon-alertError:before {
+  content: '\e90a';
+}
 .icon-camera:before {
   content: '\e906';
 }

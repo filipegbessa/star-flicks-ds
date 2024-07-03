@@ -32,6 +32,25 @@
   --success: 166, 217, 106;
   --error: 215, 25, 28;
 
+  --gray: 33, 33, 33;
+
+  /* Alert */
+  --alert-error-primary: 242, 222, 222;
+  --alert-error-secondary: 235, 204, 209;
+  --alert-error-text: 169, 68, 66;
+
+  --alert-info-primary: 217, 237, 247;
+  --alert-info-secondary: 188, 232, 241;
+  --alert-info-text: 49, 112, 143;
+
+  --alert-success-primary: 223, 240, 216;
+  --alert-success-secondary: 214, 233, 198;
+  --alert-success-text: 60, 118, 61;
+
+  --alert-warning-primary: 252, 248, 227;
+  --alert-warning-secondary: 250, 235, 204;
+  --alert-warning-text: 138, 109, 59;
+
   /* Shadows */
   --shadow-sm: 0px 0px 10px rgba(132, 132, 132, 15%);
   --shadow-md: 0px 0px 20px rgba(132, 132, 132, 20%);
