@@ -34,9 +34,9 @@ jobs:
         run: npm i
       - name: scripts 🔧
         run: npm run scripts
-      - name: Update version 📦
-        run: npm version patch --no-git-tag-version
-      - name: Publish package on NPM 📦
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: Update version 📦
+      #   run: npm version patch --no-git-tag-version
+      # - name: Publish package on NPM 📦
+      #   run: npm publish
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
