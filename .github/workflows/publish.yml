@@ -35,7 +35,7 @@ jobs:
       - name: scripts 🔧
         run: npm run scripts
       - name: Update version 📦
-        run: npm version patch
+        run: npm version patch --no-git-tag-version
       - name: Publish package on NPM 📦
         run: npm publish
         env:
