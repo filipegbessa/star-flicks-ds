@@ -1,4 +1,4 @@
-import { ChangeEvent, SelectHTMLAttributes } from 'react';
+import { SelectHTMLAttributes } from 'react';
 import { SFTypography } from '../SFTypography/SFTypography';
 
 export type SFSelectProps = {

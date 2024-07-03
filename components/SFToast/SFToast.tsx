@@ -1,6 +1,6 @@
+import { ToastType, IconsType, toastItemType } from '../../types';
 import { SFButton } from '../SFButton/SFButton';
 import { SFIcon } from '../SFIcon/SFIcon';
-import { IconsType, ToastType, toastItemType } from '@/types';
 import { SFTypography } from '../SFTypography/SFTypography';
 
 type styleProps = {
