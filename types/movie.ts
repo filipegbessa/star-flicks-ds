@@ -1,6 +1,4 @@
-import { MovieTypeEnum } from '@/enum';
-
-export type ITypeMovie = MovieTypeEnum;
+import { MovieTypeEnum } from '../enum';
 
 export type IMovieType =
   | 'name'
@@ -15,7 +13,7 @@ export interface IMovie {
   tmdbId?: string;
   id?: string;
   name: string;
-  type?: ITypeMovie;
+  type?: MovieTypeEnum;
   poster_path: string;
   popularity: string;
   overview: string;
