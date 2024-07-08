@@ -41,11 +41,11 @@ export const SFToast = ({ list, onRemove }: SFToastProps) => {
   };
 
   return (
-    <div className='contentCenter fixed bottom-5 left-2/4 z-20 flex w-auto max-w-72 -translate-x-2/4 flex-col gap-2'>
+    <div className='fixed bottom-5 left-2/4 z-20 flex w-auto -translate-x-2/4 flex-col gap-2'>
       {list.map(({ type, message, id, remove }) => (
         <div
           key={id}
-          className={`flex h-14 w-72 items-center gap-2 rounded-md border-2 px-2 ${style[type].content}`}
+          className={`flex h-14 w-96 items-center gap-2 rounded-md border-2 px-2 ${style[type].content}`}
         >
           <div className='hidden sm:flex'>
             <SFIcon

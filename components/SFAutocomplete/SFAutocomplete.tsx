@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { SFButton, SFInput } from '..';
 import { SFInputProps } from '../SFInput/SFInput';
-import { IMovie } from '@/types';
 
 export type SFAutocompleteProps = {
   listSearch: any[];
