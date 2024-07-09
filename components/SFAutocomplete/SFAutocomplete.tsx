@@ -21,7 +21,11 @@ export const SFAutocomplete = ({
 
   return (
     <div className='relative'>
-      <SFInput onClick={() => setShowAutoComplete(true)} {...rest} />
+      <SFInput
+        label={label}
+        onClick={() => setShowAutoComplete(true)}
+        {...rest}
+      />
 
       {showAutoComplete && (
         <div
@@ -29,7 +33,11 @@ export const SFAutocomplete = ({
           onClick={() => setShowAutoComplete(false)}
         />
       )}
-      <div className='absolute top-9 left-0 z-10 rounded-md bg-white w-full overflow-hidden'>
+      <div
+        className={`absolute ${
+          label ? 'top-[58px]' : 'top-9'
+        } left-0 z-10 rounded-md bg-white w-full overflow-hidden`}
+      >
         <div className='relative z-20'>
           {loading ? (
             <>loading...</>

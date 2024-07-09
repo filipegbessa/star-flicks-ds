@@ -1,5 +1,6 @@
 export { SFAutocomplete } from './SFAutocomplete/SFAutocomplete';
 export { SFButton } from './SFButton/SFButton';
+export { SFCheckbox } from './SFCheckbox/SFCheckbox';
 export { SFHeader } from './SFHeader/SFHeader';
 export { SFIcon } from './SFIcon/SFIcon';
 export { SFInput } from './SFInput/SFInput';

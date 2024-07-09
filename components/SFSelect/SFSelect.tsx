@@ -6,7 +6,6 @@ export type SFSelectProps = {
   defaultText?: string;
   error?: boolean;
   label?: string;
-  onChange?: (value: string) => void;
 } & SelectHTMLAttributes<HTMLInputElement>;
 
 export const SFSelect = ({
@@ -15,8 +14,7 @@ export const SFSelect = ({
   defaultText,
   error,
   name,
-  onChange,
-  value = '',
+  ...props
 }: SFSelectProps) => {
   const styleInput = `appearance-none disabled:bg-disabled w-full border-2 border-gray rounded-md px-3 h-9 bg-white focus:border-primary focus:outline-none ${
     error ? '!border-red-500' : ''
@@ -32,8 +30,7 @@ export const SFSelect = ({
       <select
         name={name}
         className={styleInput}
-        onChange={(e) => onChange?.(e.target.value)}
-        value={value}
+        {...(props as SelectHTMLAttributes<HTMLSelectElement>)}
       >
         <option value='DEFAULT'>{defaultText || 'Selecione...'}</option>
         {options.map((item, index) => (
