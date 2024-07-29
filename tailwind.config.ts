@@ -53,14 +53,14 @@ const config = {
     extend: {
       colors: {
         primary: toRgba('--primary'),
-        'primary-hover': 'var(--primary-hover)',
-        'primary-active': 'var(--primary-active)',
+        'primary-hover': toRgba('--primary-hover'),
+        'primary-active': toRgba('--primary-active'),
         secondary: toRgba('--secondary'),
-        'secondary-hover': 'var(--secondary-hover)',
-        'secondary-active': 'var(--secondary-active)',
+        'secondary-hover': toRgba('--secondary-hover'),
+        'secondary-active': toRgba('--secondary-active'),
         tertiary: toRgba('--tertiary'),
-        'tertiary-hover': 'var(--tertiary-hover)',
-        'tertiary-active': 'var(--tertiary-active)',
+        'tertiary-hover': toRgba('--tertiary-hover'),
+        'tertiary-active': toRgba('--tertiary-active'),
         quaternary: toRgba('--quaternary'),
         hover: toRgba('--hover'),
         click: toRgba('--click'),
@@ -93,6 +93,10 @@ const config = {
             secondary: toRgba('--alert-warning-secondary'),
             text: toRgba('--alert-warning-text'),
           },
+        },
+        input: {
+          border: toRgba('--input-border'),
+          bg: toRgba('--input-bg'),
         },
       },
       backgroundColor: {

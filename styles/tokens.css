@@ -3,16 +3,16 @@
   --bg-body: 227, 227, 227;
 
   --primary: 232, 157, 16;
-  --primary-hover: #d1880e;
-  --primary-active: #b9750c;
+  --primary-hover: 209, 136, 14;
+  --primary-active: 185, 117, 12;
   --primary-contrast: 2, 6, 23;
   --secondary: 224, 190, 126;
-  --secondary-hover: #c9a568;
-  --secondary-active: #b08d54;
+  --secondary-hover: 201, 165, 104;
+  --secondary-active: 176, 141, 84;
   --secondary-contrast: 2, 6, 23;
   --tertiary: 219, 75, 35;
-  --tertiary-hover: #c4411d;
-  --tertiary-active: #a93718;
+  --tertiary-hover: 196, 65, 29;
+  --tertiary-active: 169, 55, 24;
   --tertiary-contrast: 255, 255, 255;
   --quaternary: 236, 240, 255;
 
@@ -33,6 +33,11 @@
   --error: 215, 25, 28;
 
   --gray: 33, 33, 33;
+
+  /* Input */
+  --input-border: 229, 231, 235;
+  --input-bg: 255, 255, 255;
+  --input-radius: 215, 215, 215;
 
   /* Alert */
   --alert-error-primary: 242, 222, 222;

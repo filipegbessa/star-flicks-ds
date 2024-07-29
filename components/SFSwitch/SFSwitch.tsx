@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Switch } from '@headlessui/react';
 import useStyle from './SFSwitch.style';
 import { SFTypography } from '../SFTypography/SFTypography';
@@ -27,6 +27,10 @@ export const SFSwitch: React.FC<SFSwitchProps> = ({
     setEnabled(newValue);
     onChange?.(newValue);
   };
+
+  useEffect(() => {
+    setEnabled(defaultChecked);
+  }, [defaultChecked]);
 
   return (
     <div className='flex flex-col w-full'>

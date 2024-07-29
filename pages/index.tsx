@@ -1,16 +1,11 @@
-import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import {
   SFHeader,
   SFInput,
-  SFMoviesList,
   SFRanking,
-  SFSelect,
   SFSwitch,
   SFTagsList,
-  SFTypography,
 } from '@/components';
-import { IMovie } from '@/types';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,7 +17,6 @@ export default function Home() {
       <SFHeader logo='logo' />
       <SFSwitch variant='common' />
       <SFSwitch variant='contract' />
-      <SFSelect label='Ranking' options={['1', '2', '3', '4', '5']} />
       <SFRanking label='Ranking' value={4.78} />
       <SFTagsList list={[{ id: 1, name: 'Tag' }]} />
       <SFInput label='Label' />
