@@ -9,6 +9,7 @@ export type SFSelectProps = {
   error?: boolean;
   label?: string;
   name: string;
+  size?: 'sm' | 'md';
 } & SelectHTMLAttributes<HTMLSelectElement>;
 
 export const SFSelect = ({
@@ -17,11 +18,16 @@ export const SFSelect = ({
   defaultText = 'Selecione...',
   error = false,
   name,
+  size = 'md',
   ...selectProps
 }: SFSelectProps) => {
-  const inputClassName = `appearance-none disabled:bg-disabled w-full border-2 border-gray rounded-md px-3 h-9 bg-white focus:border-primary focus:outline-none ${
+  const inputSize = {
+    sm: 'h-6',
+    md: 'h-9',
+  };
+  const inputClassName = `appearance-none disabled:bg-disabled w-full border border-input-border rounded-md px-3 bg-input-bg focus:border-primary focus:outline-none text-sm ${
     error ? '!border-red-500' : ''
-  }`;
+  } ${inputSize[size]}`;
 
   const renderOptions = () => {
     return options.map((option, index) => {
