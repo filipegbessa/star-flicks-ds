@@ -6,7 +6,7 @@ export type SFInputProps = {
   multiline?: boolean;
   error?: boolean;
   name?: string;
-  size?: 'sm' | 'md';
+  sizeInput?: 'sm' | 'md';
   customInput?: JSX.Element;
 } & (
   | InputHTMLAttributes<HTMLInputElement>
@@ -17,7 +17,7 @@ const Content = ({
   multiline,
   error,
   name,
-  size = 'md',
+  sizeInput = 'md',
   ...props
 }: SFInputProps) => {
   const inputSize = {
@@ -26,7 +26,7 @@ const Content = ({
   };
   const style = `disabled:bg-disabled w-full border rounded-md px-3 bg-input-bg border-input-border focus:border-primary focus:outline-none py-2 text-sm ${
     error ? 'error' : ''
-  } ${inputSize[size]}`;
+  } ${inputSize[sizeInput]}`;
 
   return multiline ? (
     <textarea
