@@ -1,4 +1,5 @@
 export type IconsType =
+  | "add"
   | "close"
   | "alertInfo"
   | "alertWarning"

@@ -4,4 +4,5 @@ export type IVariant =
   | 'tertiary'
   | 'blank'
   | 'error'
+  | 'success'
   | 'default';

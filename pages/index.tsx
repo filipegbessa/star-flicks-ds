@@ -19,9 +19,24 @@ export default function Home() {
       <SFSwitch variant='contract' />
       <SFRanking label='Ranking' value={4.78} />
       <SFTagsList list={[{ id: 1, name: 'Tag' }]} />
-      <SFInput label='Label' />
-      <SFInput label='Label' disabled />
-      <SFInput multiline rows={5} label='Label' disabled />
+      <SFInput
+        value='123'
+        onChange={() => console.log('teste')}
+        label='Label'
+      />
+      <SFInput
+        value='123'
+        onChange={() => console.log('teste')}
+        label='Label'
+        disabled
+      />
+      <SFInput
+        value='123'
+        onChange={() => console.log('teste')}
+        multiline
+        rows={5}
+        label='Label'
+      />
     </main>
   );
 }

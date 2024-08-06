@@ -29,6 +29,7 @@ export default ({
           default: 'bg-transparent text-black',
           blank: 'bg-transparent text-black',
           error: 'bg-error text-white',
+          success: 'bg-success text-white',
         },
         size: {
           xs: classNames('h-4 text-xs', { 'w-4': addWidth }),
@@ -54,6 +55,7 @@ export default ({
           'text-primary hover:text-primary-hover active:text-primary-active',
         default: 'text-gray',
         error: 'text-white',
+        success: 'text-white',
       },
       size: {
         xs: 'text-xs',

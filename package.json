@@ -1,6 +1,6 @@
 {
   "name": "star-flicks-ds",
-  "version": "0.1.4-tst",
+  "version": "0.1.6-tst",
   "private": false,
   "scripts": {
     "dev": "next dev",
@@ -11,7 +11,7 @@
     "storybook": "storybook dev -p 6006",
     "storybook:build": "npm run scripts && npm run test:ci && storybook build",
     "build-vercel": "npm run storybook:build && npm run test:cover",
-    "deploy": "npm run test:ci && npm run scripts && npm publish",
+    "deploy": "npm i && npm run test:ci && npm run scripts && npm publish",
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore .",
     "test": "jest --watch",
@@ -64,7 +64,8 @@
     "components/**/*.{ts,tsx}",
     "enum/*",
     "fonts/*",
-    "styles/*",
+    "styles/sf-style.css",
+    "styles/globals.css",
     "types/*",
     "utils/*",
     "tailwind.config.ts"

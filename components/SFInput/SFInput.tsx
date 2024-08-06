@@ -1,12 +1,13 @@
 import { InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
 import { SFTypography } from '..';
+import { inputStye, inputStyeDefault } from '../../utils';
 
 export type SFInputProps = {
   label?: string;
   multiline?: boolean;
   error?: boolean;
   name?: string;
-  sizeInput?: 'sm' | 'md';
+  sizeInput?: 'sm' | 'md' | 'lg';
   customInput?: JSX.Element;
 } & (
   | InputHTMLAttributes<HTMLInputElement>
@@ -20,13 +21,10 @@ const Content = ({
   sizeInput = 'md',
   ...props
 }: SFInputProps) => {
-  const inputSize = {
-    sm: 'h-6',
-    md: 'h-9',
-  };
-  const style = `disabled:bg-disabled w-full border rounded-md px-3 bg-input-bg border-input-border focus:border-primary focus:outline-none py-2 text-sm ${
-    error ? 'error' : ''
-  } ${inputSize[sizeInput]}`;
+  const style = `px-3 py-2 ${error ? 'error' : ''} ${
+    inputStye[sizeInput].content
+  } ${inputStyeDefault}
+  `;
 
   return multiline ? (
     <textarea
@@ -51,17 +49,24 @@ export const SFInput = ({
   error,
   name,
   customInput,
+  sizeInput = 'md',
   ...rest
 }: SFInputProps) => {
   return (
     <div className='flex flex-col w-full'>
       {label && (
         <label htmlFor={name}>
-          <SFTypography size='sm'>{label}</SFTypography>
+          <SFTypography size={inputStye[sizeInput].label}>{label}</SFTypography>
         </label>
       )}
       {customInput || (
-        <Content multiline={multiline} name={name} error={error} {...rest} />
+        <Content
+          multiline={multiline}
+          name={name}
+          error={error}
+          sizeInput={sizeInput}
+          {...rest}
+        />
       )}
     </div>
   );

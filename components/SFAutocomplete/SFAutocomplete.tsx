@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { SFButton, SFInput } from '..';
 import { SFInputProps } from '../SFInput/SFInput';
+import { IVariant } from '../../types';
 
 export type SFAutocompleteProps = {
   listSearch: any[];
@@ -15,14 +16,33 @@ export const SFAutocomplete = ({
   listSearch,
   select,
   loading,
+  sizeInput = 'md',
   ...rest
 }: SFAutocompleteProps) => {
   const [showAutoComplete, setShowAutoComplete] = useState(false);
+
+  const modalStyle: {
+    [key: string]: { default: string; label: string; button: 'sm' | 'md' };
+  } = {
+    sm: { default: 'top-12', label: 'top-7', button: 'sm' },
+    md: { default: 'top-[60px]', label: 'top-9', button: 'md' },
+    lg: { default: 'top-[76px]', label: 'top-12', button: 'md' },
+  };
+  const buttonselectProps: {
+    size: 'sm' | 'md';
+    variant: IVariant;
+    className: string;
+  } = {
+    size: modalStyle[sizeInput].button,
+    variant: 'blank',
+    className: 'hover:bg-secondary w-full !justify-start',
+  };
 
   return (
     <div className='relative'>
       <SFInput
         label={label}
+        sizeInput={sizeInput}
         onClick={() => setShowAutoComplete(true)}
         {...rest}
       />
@@ -35,7 +55,7 @@ export const SFAutocomplete = ({
       )}
       <div
         className={`absolute ${
-          label ? 'top-[58px]' : 'top-9'
+          label ? modalStyle[sizeInput].default : modalStyle[sizeInput].label
         } left-0 z-10 rounded-md bg-white w-full overflow-hidden`}
       >
         <div className='relative z-20'>
@@ -51,9 +71,8 @@ export const SFAutocomplete = ({
                   if (typeof item === 'string') {
                     return (
                       <SFButton
-                        variant='blank'
+                        {...buttonselectProps}
                         key={index}
-                        className='hover:bg-secondary w-full !justify-start'
                         onClick={() => {
                           select(item);
                           setShowAutoComplete(false);
@@ -66,9 +85,8 @@ export const SFAutocomplete = ({
 
                   return (
                     <SFButton
-                      variant='blank'
+                      {...buttonselectProps}
                       key={index}
-                      className='hover:bg-secondary w-full !justify-start'
                       onClick={() => {
                         select(item);
                         setShowAutoComplete(false);

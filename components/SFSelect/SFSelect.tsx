@@ -1,5 +1,6 @@
 import { SelectHTMLAttributes } from 'react';
 import { SFTypography } from '../SFTypography/SFTypography';
+import { inputStye } from '../../utils';
 
 type Option = string | { id: string; title: string };
 
@@ -21,13 +22,9 @@ export const SFSelect = ({
   sizeInput = 'md',
   ...selectProps
 }: SFSelectProps) => {
-  const inputSize = {
-    sm: 'h-6',
-    md: 'h-9',
-  };
-  const inputClassName = `appearance-none disabled:bg-disabled w-full border border-input-border rounded-md px-3 bg-input-bg focus:border-primary focus:outline-none text-sm ${
+  const inputClassName = `appearance-none px-3 ${
     error ? '!border-red-500' : ''
-  } ${inputSize[sizeInput]}`;
+  } ${inputStye[sizeInput].content}`;
 
   const renderOptions = () => {
     return options.map((option, index) => {
@@ -48,7 +45,7 @@ export const SFSelect = ({
     <div className='flex flex-col w-full'>
       {label && (
         <label htmlFor={name}>
-          <SFTypography>{label}</SFTypography>
+          <SFTypography size={inputStye[sizeInput].label}>{label}</SFTypography>
         </label>
       )}
       <select name={name} className={inputClassName} {...selectProps}>
