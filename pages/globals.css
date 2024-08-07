@@ -7,6 +7,7 @@
   @import './titillium.css';
   @import '../styles/fontIcons.css';
   @import '../styles/structure.css';
+  @import '../styles/components.css';
 }
 
 * {

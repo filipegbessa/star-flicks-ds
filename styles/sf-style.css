@@ -5,5 +5,5 @@
 @layer base {
   @import './tokens.css';
   @import './fontIcons.css';
-  @import './structure.css';
+  @import './components.css';
 }
