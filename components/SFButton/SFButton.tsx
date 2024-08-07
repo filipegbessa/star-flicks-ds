@@ -10,6 +10,7 @@ export type SFButtonProps = {
   icon?: IconsType;
   full?: boolean;
   circle?: boolean;
+  isLoading?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const SFButton = ({
@@ -22,6 +23,7 @@ export const SFButton = ({
   children,
   full,
   circle,
+  isLoading,
   ...props
 }: SFButtonProps) => {
   const { Button: buttonStyle, Icon: iconStyle } = useStyle({
@@ -35,16 +37,20 @@ export const SFButton = ({
   return (
     <button
       {...props}
-      disabled={disabled}
+      disabled={disabled || isLoading}
       className={`${buttonStyle} ${className}`}
       data-testid='SFButton'
     >
-      {children ?? (
-        <>
-          {icon && <SFIcon name={icon} className={iconStyle} />}
-          {title}
-        </>
-      )}
+      {isLoading && <SFIcon className='animate-spin absolute' name='loading' />}
+
+      <span className={`${isLoading ? 'opacity-0' : ''}`}>
+        {children ?? (
+          <>
+            {icon && <SFIcon name={icon} className={iconStyle} />}
+            {title}
+          </>
+        )}
+      </span>
     </button>
   );
 };

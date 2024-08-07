@@ -1,6 +1,6 @@
 {
   "name": "star-flicks-ds",
-  "version": "0.1.10-tst",
+  "version": "0.1.11-tst",
   "private": false,
   "scripts": {
     "dev": "next dev",
@@ -50,10 +50,10 @@
     "eslint-plugin-storybook": "^0.8.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
-    "postcss": "^8",
+    "postcss": "^8.4.41",
     "prettier": "^2.8.8",
     "storybook": "^8.0.9",
-    "tailwindcss": "^3.4.1",
+    "tailwindcss": "^3.4.8",
     "typescript": "^5"
   },
   "description": "Star Flicks - Design system",

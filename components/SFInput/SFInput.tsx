@@ -1,14 +1,16 @@
 import { InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
 import { SFTypography } from '..';
-import { inputStye, inputStyeDefault } from '../../utils';
+import { cpfMask, inputStye, phoneMask } from '../../utils';
 
 export type SFInputProps = {
   label?: string;
   multiline?: boolean;
   error?: boolean;
+  errorMessage?: string;
   name?: string;
   sizeInput?: 'sm' | 'md' | 'lg';
   customInput?: JSX.Element;
+  mask?: string;
 } & (
   | InputHTMLAttributes<HTMLInputElement>
   | TextareaHTMLAttributes<HTMLTextAreaElement>
@@ -19,12 +21,20 @@ const Content = ({
   error,
   name,
   sizeInput = 'md',
+  mask,
+  value,
   ...props
 }: SFInputProps) => {
-  const style = `px-3 py-2 ${error ? 'error' : ''} ${
+  const style = `px-3 py-2 SFInput ${error ? 'error' : ''} ${
     inputStye[sizeInput].content
-  } ${inputStyeDefault}
-  `;
+  }`;
+
+  const selectMask = (maskType: string, value: string): string => {
+    if (maskType === 'cpf') return cpfMask(value);
+    if (maskType === 'phone') return phoneMask(value);
+
+    return value;
+  };
 
   return multiline ? (
     <textarea
@@ -38,6 +48,7 @@ const Content = ({
       name={name}
       className={`${style}`}
       data-testid='SFInput'
+      {...(mask ? { value: selectMask(mask, value as string) } : { value })}
       {...(props as InputHTMLAttributes<HTMLInputElement>)}
     />
   );
@@ -50,6 +61,7 @@ export const SFInput = ({
   name,
   customInput,
   sizeInput = 'md',
+  errorMessage,
   ...rest
 }: SFInputProps) => {
   return (
@@ -67,6 +79,11 @@ export const SFInput = ({
           sizeInput={sizeInput}
           {...rest}
         />
+      )}
+      {error && errorMessage && (
+        <SFTypography size='sm' className='text-error'>
+          {errorMessage}
+        </SFTypography>
       )}
     </div>
   );

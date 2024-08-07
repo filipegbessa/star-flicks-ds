@@ -133,6 +133,9 @@ const config = {
         md: 'var(--border-radius-md)',
         lg: 'var(--border-radius-lg)',
       },
+      animation: {
+        spin: 'spin 3s linear infinite',
+      },
     },
   },
   plugins: [],

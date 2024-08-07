@@ -1,6 +1,3 @@
-export const inputStyeDefault =
-  'disabled:bg-disabled w-full border border-input-border rounded-md bg-input-bg focus:border-primary focus:outline-none';
-
 type inputStyePoprs = {
   [key in 'sm' | 'md' | 'lg']: {
     label: 'sm' | 'md' | 'lg';
@@ -9,7 +6,28 @@ type inputStyePoprs = {
 };
 
 export const inputStye: inputStyePoprs = {
-  sm: { label: 'sm', content: `text-sm h-7 ${inputStyeDefault}` },
-  md: { label: 'md', content: `text-md h-9 ${inputStyeDefault}` },
-  lg: { label: 'lg', content: `text-xl h-12 ${inputStyeDefault}` },
+  sm: { label: 'sm', content: 'SFInput-sm' },
+  md: { label: 'md', content: 'SFInput-md' },
+  lg: { label: 'lg', content: 'SFInput-lg' },
+};
+
+export const cpfMask = (value?: string) => {
+  if (!value) return '';
+
+  return value
+    .replace(/\D/g, '')
+    .replace(/(\d{3})(\d)/, '$1.$2')
+    .replace(/(\d{3})(\d)/, '$1.$2')
+    .replace(/(\d{3})(\d{1,2})/, '$1-$2')
+    .replace(/(-\d{2})\d+?$/, '$1');
+};
+
+export const phoneMask = (value?: string): string => {
+  if (!value) return '';
+
+  return value
+    .replace(/\D/g, '')
+    .replace(/^(\d{2})(\d)/, '($1) $2')
+    .replace(/(\d{5})(\d{1,4})/, '$1-$2')
+    .substring(0, 15);
 };

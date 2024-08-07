@@ -1,7 +1,22 @@
 .SFCard {
   @apply bg-white border border-gray-200 rounded-lg shadow-md p-5;
+}
+.SFCard.noPadding {
+  @apply p-0;
+}
 
-  &.noPadding {
-    @apply p-0;
-  }
+.SFInput {
+  @apply disabled:bg-disabled w-full border border-input-border rounded-md bg-input-bg focus:border-primary focus:outline-none;
+}
+.SFInput.error {
+  @apply border-error;
+}
+.SFInput-sm {
+  @apply SFInput text-sm h-7;
+}
+.SFInput-md {
+  @apply SFInput text-base h-9;
+}
+.SFInput-lg {
+  @apply SFInput text-xl h-12;
 }
