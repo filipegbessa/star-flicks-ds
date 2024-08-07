@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  @import './tokens.css';
+  @import '../styles/tokens.css';
   @import './titillium.css';
-  @import './fontIcons.css';
-  @import './structure.css';
+  @import '../styles/fontIcons.css';
+  @import '../styles/structure.css';
 }
 
 * {

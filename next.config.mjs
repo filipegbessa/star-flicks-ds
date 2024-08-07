@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   unoptimized: true,
-  transpilePackages: ['swiper'],
+  transpilePackages: ['@headlessui/react', 'swiper'],
 };
 
 export default nextConfig;
