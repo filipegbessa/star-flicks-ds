@@ -56,6 +56,15 @@
   --alert-warning-secondary: 250, 235, 204;
   --alert-warning-text: 138, 109, 59;
 
+  --whatsapp-primary: 37, 211, 102;
+  --whatsapp-primary-hover: 33, 190, 92;
+  --whatsapp-primary-active: 29, 167, 81;
+  --whatsapp-primary-contrast: 255, 255, 255;
+  --whatsapp-secondary: 18, 140, 126;
+  --whatsapp-secondary-hover: 20, 156, 140; /* Clareia levemente para o estado de hover */
+  --whatsapp-secondary-active: 16, 126, 113; /* Escurece um pouco para o estado ativo */
+  --whatsapp-secondary-contrast: 255, 255, 255;
+
   /* Shadows */
   --shadow-sm: 0px 0px 10px rgba(132, 132, 132, 15%);
   --shadow-md: 0px 0px 20px rgba(132, 132, 132, 20%);

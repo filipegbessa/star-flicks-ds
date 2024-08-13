@@ -93,6 +93,14 @@ const config = {
             text: toRgba('--alert-warning-text'),
           },
         },
+        whatsapp: {
+          primary: toRgba('--whatsapp-primary'),
+          'primary-hover': toRgba('--whatsapp-primary-hover'),
+          'primary-active': toRgba('--whatsapp-primary-active'),
+          secondary: toRgba('--whatsapp-secondary'),
+          'secondary-hover': toRgba('--whatsapp-secondary-hover'),
+          'secondary-active': toRgba('--whatsapp-secondary-active'),
+        },
         input: {
           border: toRgba('--input-border'),
           bg: toRgba('--input-bg'),
@@ -108,6 +116,10 @@ const config = {
           primary: toRgba('--primary-contrast'),
           secondary: toRgba('--secondary-contrast'),
           tertiary: toRgba('--tertiary-contrast'),
+          whatsapp: {
+            primary: toRgba('--whatsapp-primary-contrast'),
+            secondary: toRgba('--whatsapp-secondary-contrast'),
+          },
         },
         black: {
           DEFAULT: toRgba('--text-primary'),
