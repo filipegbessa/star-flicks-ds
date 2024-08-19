@@ -25,7 +25,9 @@ export const SFModal = ({
               onClick={onClose}
             />
           )}
-          <div className={`contentCenter z-10 relative ${contentClass}`}>
+          <div
+            className={`contentCenter max-h-full sm:max-h-[90%] overflow-auto z-10 relative ${contentClass}`}
+          >
             {children}
           </div>
         </div>
